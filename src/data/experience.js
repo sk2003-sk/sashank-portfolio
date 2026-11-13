@@ -4,7 +4,11 @@ export const experience = [
     company: "TestYantra",
     period: "",
     description:
-      "Worked through React development exercises covering component state, props, events, routing and route parameters.",
+      "Contributed to the student course website used at TestYantra — a React-based learning portal with 21 course tracks and interview-prep material — and completed React exercises covering component state, props, events, routing and route parameters.",
+    link: {
+      label: "View the student portal",
+      href: "https://frontend-interview-chi.vercel.app/",
+    },
     tags: ["React.js", "TypeScript", "React Router"],
   },
   {

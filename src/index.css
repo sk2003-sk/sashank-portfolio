@@ -647,6 +647,25 @@ h3 {
   font-size: 0.95rem;
 }
 
+.timeline-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 14px;
+  color: var(--accent);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.timeline-link svg {
+  transition: transform 0.2s var(--ease);
+}
+
+.timeline-link:hover svg,
+.timeline-link:focus-visible svg {
+  transform: translate(2px, -2px);
+}
+
 .tag-list {
   display: flex;
   flex-wrap: wrap;

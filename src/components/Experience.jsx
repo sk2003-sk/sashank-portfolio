@@ -1,4 +1,5 @@
 import { experience } from "../data/experience";
+import { ArrowUpRightIcon } from "./Icons";
 import Reveal from "./Reveal";
 import SectionHeader from "./SectionHeader";
 
@@ -33,6 +34,18 @@ function Experience() {
 
               <p className="timeline-company">{item.company}</p>
               <p className="timeline-desc">{item.description}</p>
+
+              {item.link ? (
+                <a
+                  className="timeline-link"
+                  href={item.link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {item.link.label}
+                  <ArrowUpRightIcon size={15} />
+                </a>
+              ) : null}
 
               <ul className="tag-list" aria-label="Technologies">
                 {item.tags.map((tag) => (
