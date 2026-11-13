@@ -9,16 +9,24 @@ function Footer() {
         <p>Follow me</p>
 
         <div className="footer-icons">
-          <a href="https://github.com/sk2003-sk" target="_blank">
-            <img src={git} alt="" />
+          <a
+            href="https://github.com/sk2003-sk"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={git} alt="GitHub" />
           </a>
 
-          <a href="https://linkedin.com" target="_blank">
-            <img src={linkedin} alt="" />
+          <a
+            href="https://www.linkedin.com/in/b-sashank/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={linkedin} alt="LinkedIn" />
           </a>
 
-          <a href="mailto:example@gmail.com">
-            <img src={mail} alt="" />
+          <a href="mailto:shashankravijay1234@gmail.com">
+            <img src={mail} alt="Email" />
           </a>
         </div>
       </footer>
