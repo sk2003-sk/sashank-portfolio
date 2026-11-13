@@ -1,38 +1,65 @@
-import git from "../assets/images/git-footer.svg";
-import linkedin from "../assets/images/linkedin-footer.svg";
-import mail from "../assets/images/mail-footer.svg";
+import { profile } from "../data/profile";
+import { ArrowUpIcon, GitHubIcon, LinkedInIcon, MailIcon } from "./Icons";
+
+const FOOTER_LINKS = [
+  { href: "#about", label: "Home" },
+  { href: "#experience", label: "Experience" },
+  { href: "#skills", label: "Skills" },
+  { href: "#projects", label: "Projects" },
+  { href: "#education", label: "Education" },
+  { href: "#contact", label: "Contact" },
+];
 
 function Footer() {
   return (
-    <>
-      <footer>
-        <p>Follow me</p>
+    <footer className="site-footer">
+      <div className="footer-top">
+        <div className="footer-brand">
+          <p className="footer-name">{profile.name}</p>
+          <p className="footer-tagline">
+            {profile.role} based in {profile.location}.
+          </p>
+        </div>
 
-        <div className="footer-icons">
+        <nav className="footer-nav" aria-label="Footer">
+          {FOOTER_LINKS.map((link) => (
+            <a key={link.href} href={link.href}>
+              {link.label}
+            </a>
+          ))}
+        </nav>
+
+        <div className="footer-socials">
           <a
-            href="https://github.com/sk2003-sk"
+            href={profile.socials.github}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Sashank on GitHub"
           >
-            <img src={git} alt="GitHub" />
+            <GitHubIcon />
           </a>
-
           <a
-            href="https://www.linkedin.com/in/b-sashank/"
+            href={profile.socials.linkedin}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Sashank on LinkedIn"
           >
-            <img src={linkedin} alt="LinkedIn" />
+            <LinkedInIcon />
           </a>
-
-          <a href="mailto:shashankravijay1234@gmail.com">
-            <img src={mail} alt="Email" />
+          <a href={`mailto:${profile.email}`} aria-label="Email Sashank">
+            <MailIcon />
           </a>
         </div>
-      </footer>
+      </div>
 
-      <p className="copyright">Sashank © 2026</p>
-    </>
+      <div className="footer-bottom">
+        <p>© 2026 {profile.name}. Built with React and Vite.</p>
+        <a className="footer-top-link" href="#about">
+          Back to top
+          <ArrowUpIcon />
+        </a>
+      </div>
+    </footer>
   );
 }
 

@@ -1,45 +1,96 @@
-import learnhub from "../assets/images/learnhub.png";
-import sparkBeauty from "../assets/images/spark-beauty.png";
+import { projects } from "../data/projects";
+import { ArrowUpRightIcon, CheckIcon } from "./Icons";
+import Reveal from "./Reveal";
+import SectionHeader from "./SectionHeader";
 
 function Projects() {
   return (
-    <section className="projects" id="projects">
-      <p>Projects</p>
+    <section className="section" id="projects">
+      <Reveal>
+        <SectionHeader
+          eyebrow="Projects"
+          title="Things I've built"
+          description="Three projects, each deployed and open to explore."
+        />
+      </Reveal>
 
-      <div className="project-block">
-        <div className="proj-list">
-          <img src={learnhub} alt="LearnHub learning platform homepage" />
+      <div className="projects-grid">
+        {projects.map((project, index) => (
+          <Reveal
+            as="article"
+            key={project.title}
+            className="project-card"
+            delay={(index % 2) * 90}
+          >
+            <a
+              className="project-media"
+              href={project.live}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${project.title} live site (opens in a new tab)`}
+            >
+              <img
+                src={project.image}
+                alt={project.imageAlt}
+                width="1100"
+                height="688"
+                loading="lazy"
+                decoding="async"
+              />
+              <span className="project-media-hint" aria-hidden="true">
+                Visit site
+                <ArrowUpRightIcon />
+              </span>
+            </a>
 
-          <p>
-            LearnHub — a learning platform with a searchable course catalog,
-            featured lessons and progress certificates.
-          </p>
+            <div className="project-body">
+              <div className="project-heading">
+                <div>
+                  <h3>{project.title}</h3>
+                  <p className="project-subtitle">{project.subtitle}</p>
+                </div>
+                <span className="project-period">{project.period}</span>
+              </div>
 
-          <p>Technologies Used</p>
+              <p className="project-desc">{project.description}</p>
 
-          <p>React, React Router, Tailwind CSS, JavaScript</p>
+              <ul className="project-features" aria-label="Key features">
+                {project.features.map((feature) => (
+                  <li key={feature}>
+                    <CheckIcon />
+                    {feature}
+                  </li>
+                ))}
+              </ul>
 
-          <a href="https://learn-hub-ai-alpha.vercel.app" target="_blank">
-            Live Demo
-          </a>
-        </div>
+              <ul className="tag-list" aria-label="Tech stack">
+                {project.stack.map((tech) => (
+                  <li key={tech}>{tech}</li>
+                ))}
+              </ul>
 
-        <div className="proj-list">
-          <img src={sparkBeauty} alt="Spark beauty parlour booking app homepage" />
-
-          <p>
-            Spark Beauty Parlour — a MERN salon booking app with service
-            categories, booking flow and booking history.
-          </p>
-
-          <p>Technologies Used</p>
-
-          <p>React, NodeJS, ExpressJS, MongoDB, REST APIs</p>
-
-          <a href="https://spark-beauty-parlour.vercel.app" target="_blank">
-            Live Demo
-          </a>
-        </div>
+              <div className="project-links">
+                <a
+                  className="btn btn-primary btn-small"
+                  href={project.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Live demo
+                  <ArrowUpRightIcon />
+                </a>
+                <a
+                  className="btn btn-ghost btn-small"
+                  href={project.repo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Source code
+                </a>
+              </div>
+            </div>
+          </Reveal>
+        ))}
       </div>
     </section>
   );

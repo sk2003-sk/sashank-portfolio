@@ -1,26 +1,46 @@
-import tenth from "../assets/images/tenth.png";
-import inter from "../assets/images/inter.png";
-import degree from "../assets/images/degree.png";
+import { education } from "../data/education";
+import Reveal from "./Reveal";
+import SectionHeader from "./SectionHeader";
 
 function Education() {
   return (
-    <section className="education" id="education">
-      <div className="edu-card">
-        <img src={tenth} alt="" />
-        <p className="stu">Sri Chaitanya Techno School</p>
-        <p>CGPA: 9.8</p>
-      </div>
+    <section className="section" id="education">
+      <Reveal>
+        <SectionHeader
+          eyebrow="Education"
+          title="Academic background"
+          description="B.Tech graduate, class of 2025."
+        />
+      </Reveal>
 
-      <div className="edu-card">
-        <img src={inter} alt="" />
-        <p className="stu">Narayana</p>
-        <p>CGPA: 86.4</p>
-      </div>
+      <div className="education-grid">
+        {education.map((item, index) => (
+          <Reveal
+            as="article"
+            key={item.institution}
+            className={`edu-card${item.primary ? " is-primary" : ""}`}
+            delay={index * 80}
+          >
+            <img
+              src={item.image}
+              alt=""
+              width="120"
+              height="120"
+              loading="lazy"
+            />
 
-      <div className="edu-card">
-        <img src={degree} alt="" />
-        <p className="stu">Siddartha Institute of Science and Technology</p>
-        <p>CGPA: 8.07</p>
+            <p className="edu-qualification">{item.qualification}</p>
+            <h3>{item.institution}</h3>
+
+            {(item.location || item.period) && (
+              <p className="edu-meta">
+                {[item.location, item.period].filter(Boolean).join(" · ")}
+              </p>
+            )}
+
+            <p className="edu-result">{item.result}</p>
+          </Reveal>
+        ))}
       </div>
     </section>
   );
