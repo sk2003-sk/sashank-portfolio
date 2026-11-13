@@ -1,6 +1,5 @@
-import movies from "../assets/images/movies.png";
-import array from "../assets/images/array-rendering.png";
-import todo from "../assets/images/todo-list.png";
+import learnhub from "../assets/images/learnhub.png";
+import sparkBeauty from "../assets/images/spark-beauty.png";
 
 function Projects() {
   return (
@@ -9,46 +8,35 @@ function Projects() {
 
       <div className="project-block">
         <div className="proj-list">
-          <img src={movies} alt="" />
+          <img src={learnhub} alt="LearnHub learning platform homepage" />
 
-          <p>Developed a secure React-based authentication dashboard app.</p>
+          <p>
+            LearnHub — a learning platform with a searchable course catalog,
+            featured lessons and progress certificates.
+          </p>
 
           <p>Technologies Used</p>
 
-          <p>React, NodeJS, ExpressJS, CSS, JavaScript</p>
+          <p>React, React Router, Tailwind CSS, JavaScript</p>
 
-          <a href="https://react-auth-api-app.vercel.app/" target="_blank">
+          <a href="https://learn-hub-ai-alpha.vercel.app" target="_blank">
             Live Demo
           </a>
         </div>
 
         <div className="proj-list">
-          <img src={array} alt="" />
+          <img src={sparkBeauty} alt="Spark beauty parlour booking app homepage" />
 
-          <p>Interactive web app demonstrating efficient array rendering.</p>
-
-          <p>Technologies Used</p>
-
-          <p>React, CSS, JavaScript</p>
-
-          <a href="https://array-rendering.vercel.app/" target="_blank">
-            Live Demo
-          </a>
-        </div>
-
-        <div className="proj-list">
-          <img src={todo} alt="" />
-
-          <p>Full-featured Todo list application built with React.</p>
+          <p>
+            Spark Beauty Parlour — a MERN salon booking app with service
+            categories, booking flow and booking history.
+          </p>
 
           <p>Technologies Used</p>
 
-          <p>React, CSS, JavaScript</p>
+          <p>React, NodeJS, ExpressJS, MongoDB, REST APIs</p>
 
-          <a
-            href="https://to-do-react-app-amber-sigma.vercel.app/"
-            target="_blank"
-          >
+          <a href="https://spark-beauty-parlour.vercel.app" target="_blank">
             Live Demo
           </a>
         </div>
