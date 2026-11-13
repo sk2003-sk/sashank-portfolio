@@ -20,7 +20,7 @@ function Education() {
       <div className="edu-card">
         <img src={degree} alt="" />
         <p className="stu">Siddartha Institute of Science and Technology</p>
-        <p>CGPA: 8.09</p>
+        <p>CGPA: 8.07</p>
       </div>
     </section>
   );
