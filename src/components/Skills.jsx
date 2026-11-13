@@ -13,27 +13,26 @@ function Skills() {
         />
       </Reveal>
 
-      <div className="skills-grid">
+      <Reveal className="skill-panel" delay={60}>
         {skillGroups.map((group, index) => (
-          <Reveal
-            key={group.title}
-            className="skill-card"
-            delay={(index % 3) * 80}
-          >
-            <div className="skill-card-head">
+          <div className="skill-row" key={group.title}>
+            <div className="skill-row-head">
+              <span className="skill-index">
+                {String(index + 1).padStart(2, "0")}
+              </span>
               <h3>{group.title}</h3>
               <p>{group.caption}</p>
             </div>
 
-            <ul className="skill-list">
+            <ul className="skill-chips">
               {group.skills.map((skill) => (
                 <li key={skill.name}>
                   {skill.icon ? (
                     <img
                       src={skill.icon}
                       alt=""
-                      width="26"
-                      height="26"
+                      width="20"
+                      height="20"
                       loading="lazy"
                     />
                   ) : (
@@ -45,9 +44,9 @@ function Skills() {
                 </li>
               ))}
             </ul>
-          </Reveal>
+          </div>
         ))}
-      </div>
+      </Reveal>
     </section>
   );
 }
