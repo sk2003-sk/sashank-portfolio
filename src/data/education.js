@@ -15,7 +15,7 @@ export const education = [
   {
     institution: "Narayana",
     qualification: "Intermediate",
-    result: "86.4%",
+    result: "Percentage: 86.4%",
     image: interImage,
   },
   {
